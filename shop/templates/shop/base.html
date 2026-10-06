@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Venus Smoke City</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="{% static 'shop/style.css' %}">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">Venus Smoke City</div>
+        <div> 
+            <a href="/">Home</a>
+            <a href="/products/">Products</a>
+            <a href="/contact/">Contact</a>
+
+            <a href="/admin-login/" style="
+                "color:#fff;
+                margin-left:15px;
+                font-size:22px;
+                transition:0.3s;
+            ">
+                <i class="fa-solid fa-cannabis"></i>
+
+            </a>
+        </div>
+
+        </div>
+    </nav>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer style="text-align:center; padding:20px; color:#fff; background:#000;">
+        <p>© 2024 Venus Smoke City. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

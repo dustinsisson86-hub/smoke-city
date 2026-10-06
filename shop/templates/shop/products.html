@@ -1,0 +1,20 @@
+{% extends 'shop/base.html' %}
+
+{% block content %}
+<h1 style="text-align:center;">Products</h1>
+
+<div style="display:flex;flex-wrap:wrap;gap:20px;padding:20px;">
+    {% for item in items %}
+        <div style="background:#222;padding:20px;width:250px;border-radius:10px;">
+            {% if item.image %}
+                <img src="{{ item.image.url }}" style="width:100%;border-radius:10px;">
+            {% endif %}
+            <h2>{{ item.name }}</h2>
+            <p>${{ item.price }}</p>
+            <p>{{ item.category }}</p>
+            <p>{{ item.description }}</p>
+            <p>{% if item.in_stock %}In Stock{% else %}Out of Stock{% endif %}</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

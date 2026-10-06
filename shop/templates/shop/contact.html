@@ -1,0 +1,111 @@
+{% extends "shop/base.html" %}
+{% block content %}
+
+<section style="
+    background:#000;
+    color:#fff;
+    text-align:center;
+    padding:60px 20px;
+    border-top:2px solid #00ff4c;
+    border-bottom:2px solid #ff0000;
+">
+
+    <!-- Contact Info + Hours Card -->
+    <div style="
+        max-width:600px;
+        margin:auto;
+        background:#0a0a0a;
+        border-radius:10px;
+        box-shadow:0 0 25px #00ff4c;
+        padding:40px;
+        margin-bottom:40px;
+    ">
+        <h2 style="
+            font-size:32px;
+            margin-bottom:25px;
+            background:linear-gradient(135deg,#00ff4c,#ff0000);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+        ">
+            Contact Information
+        </h2>
+
+        <!-- Address Section -->
+        <p style="color:#ccc; font-size:18px; text-align:left; line-height:1.6;">
+            <strong style="color:#fff;">Phone:</strong> (469) 564 1049<br>
+            <strong style="color:#fff;">Address:</strong> 100 S. Main St, Suite 100, Venus, TX 76084
+        </p>
+
+        <!-- Divider Line -->
+        <hr style="border:0; border-top:1px solid #333; margin:25px 0;">
+
+        <!-- Hours Section -->
+        <h3 style="
+            font-size:24px;
+            margin-bottom:15px;
+            background:linear-gradient(135deg,#ff0000,#00ff4c);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            text-align:center;
+        ">
+            Store Hours
+        </h3>
+
+        <div style="color:#ccc; font-size:18px; line-height:1.8; text-align:left;">
+            <p><strong style="color:#fff;">Monday:</strong> 24 Hours</p>
+            <p><strong style="color:#fff;">Tuesday:</strong> 24 Hours</p>
+            <p><strong style="color:#fff;">Wednesday:</strong> 24 Hours</p>
+            <p><strong style="color:#fff;">Thursday:</strong> 24 Hours</p>
+            <p><strong style="color:#fff;">Friday:</strong> 24 Hours</p>
+            <p><strong style="color:#fff;">Saturday:</strong> 24 Hours</p>
+            <p><strong style="color:#fff;">Sunday:</strong> 24 Hours</p>
+        </div>
+    </div>
+
+    <!-- Contact Form Card -->
+    <div style="
+        max-width:600px;
+        margin:auto;
+        background:#0a0a0a;
+        border-radius:10px;
+        box-shadow:0 0 25px #ff0000;
+        padding:40px;
+    ">
+        <h2 style="
+            font-size:32px;
+            margin-bottom:25px;
+            background:linear-gradient(135deg,#ff0000,#00ff4c);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+        ">
+            Send a Message
+        </h2>
+
+        <p style="color:#ccc; margin-bottom:25px; font-size:18px;">
+            Have questions or want to reach out? Send us a message below.
+        </p>
+
+        <form method="POST" style="text-align:left;">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit" style="
+                background:linear-gradient(135deg,#00ff4c,#ff0000);
+                color:#fff;
+                border:none;
+                padding:12px 25px;
+                border-radius:6px;
+                cursor:pointer;
+                font-size:16px;
+                transition:0.3s;
+                width:100%;
+                margin-top:10px;
+            ">
+                Send Message
+            </button>
+        </form>
+    </div>
+
+</section>
+
+{% endblock %}

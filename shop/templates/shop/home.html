@@ -1,0 +1,100 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- HERO SECTION -->
+<div class="hero" style="position:relative; overflow:hidden; padding:100px 20px; text-align:center; background:linear-gradient(135deg,#00ff4c,#ff0000); border-bottom:2px solid #00ff4c;">
+    <div class="fog-overlay"></div>
+
+    <h1 style="
+        font-size:60px;
+        margin-bottom:10px;
+        background:linear-gradient(135deg,#ffffff,#00ff4c);
+        -webkit-background-clip:text;
+        -webkit-text-fill-color:transparent;
+        position:relative;
+        z-index:2;
+    ">
+        Venus Smoke City
+    </h1>
+
+    <p style="font-size:22px; color:#fff; opacity:0.9; position:relative; z-index:2;">
+        Premium Glass • Vapes • CBD • Accessories
+    </p>
+</div>
+
+
+<!-- ABOUT SECTION -->
+<section style="
+    background:#000;
+    color:#fff;
+    text-align:center;
+    padding:60px 20px;
+    border-top:2px solid #00ff4c;
+    border-bottom:2px solid #ff0000;
+">
+    <h2 style="
+        font-size:40px;
+        margin-bottom:20px;
+        background:linear-gradient(135deg,#00ff4c,#ff0000);
+        -webkit-background-clip:text;
+        -webkit-text-fill-color:transparent;
+    ">
+        The Heart of Smoke City
+    </h2>
+
+    <p style="font-size:20px; max-width:800px; margin:auto; line-height:1.6;">
+        Smoke City isn’t just a shop — it’s a vibe.  
+        We bring together premium glass, cutting‑edge vapes, and the best CBD and accessories under one neon glow.  
+        Every piece we carry is chosen for quality, style, and the kind of experience that turns a simple puff into a statement.  
+        Whether you’re a collector, a casual user, or just exploring, this is where smoke meets art.
+    </p>
+</section>
+
+
+<!-- FEATURED PRODUCT SECTION -->
+{% if featured %}
+<section style="padding:60px 20px; background:#0a0a0a; text-align:center;">
+    <h2 style="
+        font-size:36px;
+        margin-bottom:30px;
+        background:linear-gradient(135deg,#00ff4c,#ff0000);
+        -webkit-background-clip:text;
+        -webkit-text-fill-color:transparent;
+    ">
+        Featured Product
+    </h2>
+
+    <div style="max-width:500px; margin:auto; position:relative;">
+        <img src="{{ featured.image.url }}" alt="{{ featured.name }}" style="width:100%; border-radius:10px; box-shadow:0 0 25px #00ff4c;">
+    </div>
+
+    <h3 style="color:#fff; margin-top:20px; font-size:24px;">
+        {{ featured.name }}
+    </h3>
+
+    <p style="color:#ccc; margin-top:10px; font-size:18px;">
+        {{ featured.description }}
+    </p>
+
+    {% if featured.price %}
+    <p style="color:#00ff4c; margin-top:10px; font-size:20px;">
+        {{ featured.price }}
+    </p>
+    {% endif %}
+</section>
+{% endif %}
+
+
+
+<!-- FOOTER -->
+<footer style="
+    background:#000;
+    color:#fff;
+    text-align:center;
+    padding:30px 20px;
+    border-top:2px solid #00ff4c;
+">
+ 
+
+{% endblock %}
