@@ -14,13 +14,20 @@ from pathlib import Path
 import cloudinary
 import os
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 cloudinary.config(
-    cloud_name=os.environ.get("CLOUD_NAME"),
+    cloud_name=os.environ.get("CLOUDINARY_CLOUD_NAME"),
     api_key=os.environ.get("CLOUDINARY_API_KEY"),
     api_secret=os.environ.get("CLOUDINARY_API_SECRET"),
 )
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": os.environ.get("CLOUDINARY_CLOUD_NAME"),
+    "API_KEY": os.environ.get("CLOUDINARY_API_KEY"),
+    "API_SECRET": os.environ.get("CLOUDINARY_API_SECRET"),
+    "MEDIA_TAG": "media",
+}
 
 
 # Quick-start development settings - unsuitable for production
@@ -32,7 +39,7 @@ SECRET_KEY = 'django-insecure-l03mzn4zt4qb16ws1d--6dk&c_si)29j6q%_tg_=!wefk5kc%z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['smoke-city.onrender.com']
+ALLOWED_HOSTS = ["smoke-city.onrender.com", "127.0.0.1", "localhost"]
 
 
 
