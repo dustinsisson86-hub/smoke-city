@@ -62,7 +62,7 @@ MIDDLEWARE = [
 
 ]
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
@@ -139,8 +139,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+
 
 
 LOGIN_REDIRECT_URL = '/admin/'
