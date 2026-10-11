@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import ContactMessage, Product , FeaturedProduct
 from django.utils.html import format_html
 
+
 class ContactMessageAdmin(admin.ModelAdmin):
     list_display = ("name", "email", "created_at", "reply")
 
