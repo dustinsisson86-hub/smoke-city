@@ -8,6 +8,9 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 from dotenv import load_dotenv
+import logging
+
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -17,7 +20,8 @@ load_dotenv(BASE_DIR / ".env")
 SECRET_KEY = 'django-insecure-l03mzn4zt4qb16ws1d--6dk&c_si)29j6q%_tg_=!wefk5kc%z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv("DEBUG", "False").lower() in ("true", "1", "yes")
+
 
 ALLOWED_HOSTS = ["smoke-city.onrender.com", "127.0.0.1", "localhost"]
 
@@ -112,3 +116,6 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 LOGIN_REDIRECT_URL = '/admin/'
+
+
+logging.basicConfig(level=logging.DEBUG)
