@@ -6,7 +6,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=7, decimal_places=2)
     category = models.CharField(max_length=100)
     description = models.TextField(blank=True)
-    image = CloudinaryField('image')
+    image = models.ImageField(upload_to='products/')
     in_stock = models.BooleanField(default=True)
 
     def __str__(self):
@@ -17,7 +17,7 @@ class FeaturedProduct(models.Model):
     name = models.CharField(max_length=150)
     description = models.TextField(blank=True)
     price = models.CharField(max_length=50, blank=True)
-    image = CloudinaryField('image')
+    image = models.ImageField(upload_to='featured/')
     active = models.BooleanField(default=True)
 
     def __str__(self):
