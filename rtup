@@ -1,0 +1,22 @@
+[1mdiff --git a/shop/apps.py b/shop/apps.py[m
+[1mindex 1c6df28..c954b30 100644[m
+[1m--- a/shop/apps.py[m
+[1m+++ b/shop/apps.py[m
+[36m@@ -1,15 +1,7 @@[m
+[32m+[m
+ from django.apps import AppConfig[m
+[31m-from django.contrib.auth.models import User[m
+ [m
+ [m
+ class ShopConfig(AppConfig):[m
+     default_auto_field = 'django.db.models.BigAutoField'[m
+     name = 'shop'[m
+[31m-[m
+[31m-    def ready(self):[m
+[31m-        if not User.objects.filter(username="admin").exists():[m
+[31m-            User.objects.create_superuser([m
+[31m-                username="admin",[m
+[31m-                email="admin@example.com",[m
+[31m-                password="admin123"[m
+[31m-            )[m
+\ No newline at end of file[m

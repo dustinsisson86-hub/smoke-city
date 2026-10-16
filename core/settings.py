@@ -1,3 +1,5 @@
+
+
 """
 Django settings for core project.
 """
@@ -21,7 +23,8 @@ load_dotenv(BASE_DIR / ".env")
 SECRET_KEY = 'django-insecure-l03mzn4zt4qb16ws1d--6dk&c_si)29j6q%_tg_=!wefk5kc%z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False").lower() in ("true", "1", "yes")
+DEBUG = True
+
 
 
 ALLOWED_HOSTS = ["smoke-city.onrender.com", "127.0.0.1", "localhost"]
@@ -91,6 +94,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 # Database
 DATABASE_URL = os.environ.get("DATABASE_URL")
+print("DATABASE_URL =", repr(DATABASE_URL))
 
 if DATABASE_URL:
     DATABASES = {

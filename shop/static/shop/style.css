@@ -115,3 +115,52 @@ nav a:hover {
   pointer-events: none;
   z-index: 1;
 }
+
+.product-detail {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.product-image img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 102, 0.4);
+}
+
+.product-info h1 {
+    margin-top: 20px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.product-info .description {
+    margin: 20px auto;
+    max-width: 700px;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.detail-actions {
+    margin-top: 30px;
+}
+
+.detail-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #ff0066;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.detail-button:hover {
+    background-color: #ff3385;
+    transform: translateY(-2px);
+}
