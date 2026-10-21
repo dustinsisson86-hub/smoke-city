@@ -164,3 +164,70 @@ nav a:hover {
     background-color: #ff3385;
     transform: translateY(-2px);
 }
+
+/* Featured Grid Section */
+.featured-grid-section {
+    padding: 60px 20px;
+    background: #0a0a0a;
+    text-align: center;
+}
+
+.featured-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #00ff4c, #ff0000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Responsive Grid */
+.featured-grid {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    padding: 20px 0;
+}
+
+/* Individual Product Cards */
+.featured-card {
+    background: #111;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 255, 76, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.featured-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
+}
+
+.featured-card img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 auto 15px auto;
+    display: block;
+}
+
+.featured-card h3 {
+    color: #fff;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.featured-card p {
+    color: #ccc;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.featured-price {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 18px;
+    color: #00ff4c;
+    font-weight: bold;
+}

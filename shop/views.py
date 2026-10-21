@@ -6,7 +6,7 @@ from django.contrib.auth.views import LoginView
 
 # HOME PAGE
 def home(request):
-    featured = FeaturedProduct.objects.filter(active=True).first()
+    featured = FeaturedProduct.objects.filter(active=True)
     return render(request, 'shop/home.html', {'featured': featured})
 
 # PRODUCT LIST PAGE (your main products page)
