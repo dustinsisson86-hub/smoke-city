@@ -59,7 +59,7 @@
 
     <div class="featured-grid">
         {% for item in featured %}
-        <div class="featured-card">
+        <a href="{% url 'product_detail' item.product.pk %}" class="featured-card">
             <img src="{{ item.image.url }}" alt="{{ item.name }}">
             <h3>{{ item.name }}</h3>
             <p>{{ item.description }}</p>
@@ -67,7 +67,7 @@
             {% if item.price %}
             <span class="featured-price">{{ item.price }}</span>
             {% endif %}
-        </div>
+        </a>
         {% endfor %}
     </div>
 </section>

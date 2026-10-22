@@ -196,6 +196,10 @@ nav a:hover {
     text-align: center;
     box-shadow: 0 0 20px rgba(0, 255, 76, 0.3);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+     display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 .featured-card:hover {
