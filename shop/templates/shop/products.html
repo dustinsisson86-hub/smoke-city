@@ -1,21 +1,27 @@
 {% extends 'shop/base.html' %}
 
 {% block content %}
-<h1 style="text-align:center;">Products</h1>
+<section class="featured-grid-section">
+    <h2 class="featured-title">Products</h2>
 
-<div style="display:flex;flex-wrap:wrap;gap:20px;padding:20px;">
-    {% for item in items %}
-        <a href="{% url 'product_detail' item.pk %}" style="text-decoration:none;color:inherit;">
-            <div style="background:#222;padding:20px;width:250px;border-radius:10px;cursor:pointer;">
-                {% if item.image %}
-                    <img src="{{ item.image.url }}" style="width:100%;border-radius:10px;">
-                {% endif %}
-                <h2>{{ item.name }}</h2>
-                <p>${{ item.price }}</p>
-                <p>{{ item.category }}</p>
-                <p>{% if item.in_stock %}In Stock{% else %}Out of Stock{% endif %}</p>
-            </div>
+    <div class="featured-grid">
+        {% for item in items %}
+        <a href="{% url 'product_detail' item.pk %}" class="featured-card">
+            {% if item.image %}
+            <img src="{{ item.image.url }}" alt="{{ item.name }}">
+            {% endif %}
+            <h3>{{ item.name }}</h3>
+            {% if item.description %}
+            <p>{{ item.description|truncatewords:20 }}</p>
+            {% endif %}
+            <span class="featured-price">${{ item.price }}</span>
+            {% if not item.in_stock %}
+            <p class="out-of-stock">Out of Stock</p>
+            {% endif %}
         </a>
-    {% endfor %}
-</div>
+        {% empty %}
+        <p>No products yet.</p>
+        {% endfor %}
+    </div>
+</section>
 {% endblock %}

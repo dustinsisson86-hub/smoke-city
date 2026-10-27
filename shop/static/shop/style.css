@@ -235,3 +235,9 @@ nav a:hover {
     color: #00ff4c;
     font-weight: bold;
 }
+
+.featured-card .out-of-stock {
+    color: #ff0000;
+    font-weight: bold;
+    margin-top: 10px;
+}
